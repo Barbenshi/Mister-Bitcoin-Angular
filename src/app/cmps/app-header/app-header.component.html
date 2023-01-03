@@ -1,6 +1,6 @@
 <section class="main-header flex space-between">
   <div routerLink="/" class="logo flex">
-    <img src="../../../assets/icons/bitcoin.png" alt="" />
+    <img src="assets/icons/bitcoin.png" alt="" />
     <h1 class="flex align-center justify-center">Mister Bitcoin</h1>
   </div>
   <nav>
@@ -11,17 +11,17 @@
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           title="Home-page"
-          ><img src="../../../assets/icons/home.png" alt=""
+          ><img src="assets/icons/home.png" alt=""
         /></a>
       </li>
       <li>
         <a routerLink="/contact" routerLinkActive="active" title="Contacts-page"
-          ><img src="../../../assets/icons/users.png" alt=""
+          ><img src="assets/icons/users.png" alt=""
         /></a>
       </li>
       <li>
         <a routerLink="/stats" routerLinkActive="active" title="Statistic-page"
-          ><img src="../../../assets/icons/increase.png" alt=""
+          ><img src="assets/icons/increase.png" alt=""
         /></a>
       </li>
       <li *ngIf="user">
