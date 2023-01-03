@@ -1,0 +1,7 @@
+<section class="contacts-app">
+    <contact-filter (setFilter)="setFilter($event)" [filter]="filterBy"></contact-filter>
+    <button [routerLink]="['/contact/edit']" class="simple-button">Add New Contact</button>
+    <contact-list (removeContact)="removeContact($event)" [contacts]="contacts$|async"></contact-list>
+</section>
+
+<router-outlet></router-outlet>

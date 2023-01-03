@@ -1,0 +1,12 @@
+<div [routerLink]="['/contact',contact._id]" class="contact-preview flex column space-between" [style.backgroundImage]="imgUrl">
+    <h2>{{contact.name}}</h2>
+    <section class="actions flex space-between">
+        <button (click)="onEditContact($event)" class="simple-button">
+            <img src="../../../assets/icons/edit.png" alt="">
+        </button>
+        <button class="simple-button" (click)="onRemoveContact($event)">
+            <img src="../../../assets/icons/delete.png" alt="">
+        </button>
+    </section>
+</div>
+    

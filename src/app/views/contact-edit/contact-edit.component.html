@@ -1,0 +1,29 @@
+<section routerLink="/contact" class="contact-edit modal-wrapper">
+  <div (click)="$event.stopPropagation()" class="modal-content">
+    <h2>{{ contact._id ? "Edit " : "Add" }} Contact</h2>
+    <form (ngSubmit)="onSubmit()">
+      <section>
+        <label for="name">Name</label>
+        <input [(ngModel)]="contact.name" type="text" name="name" id="name" />
+      </section>
+      <section>
+        <label for="phone">Phone Number</label>
+        <input [(ngModel)]="contact.phone" type="tel" name="phone" id="phone" />
+      </section>
+      <section>
+        <label for="email">Email Address</label>
+        <input
+          [(ngModel)]="contact.email"
+          type="email"
+          name="email"
+          id="email"
+        />
+      </section>
+      <button class="simple-button">SAVE</button>
+    </form>
+
+    <button routerLink="/contact" class="simple-button dismiss left">
+      <img src="../../../assets/icons/back.png" alt="" />
+    </button>
+  </div>
+</section>

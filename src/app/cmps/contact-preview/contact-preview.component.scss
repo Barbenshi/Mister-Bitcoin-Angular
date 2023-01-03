@@ -1,0 +1,27 @@
+.contact-preview{
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+    box-shadow: 0 0 3px 1px rgb(156, 134, 134);
+    background-color: darkseagreen;
+    text-align: center;
+    border-radius: 1em;
+    overflow: hidden;
+    cursor: pointer;
+
+    .actions{
+        transition: transform 0.6s;
+        transform: translateY(100%);
+        background-color: rgba(0, 0, 0, 0.336);
+        button{
+            max-width: 48px;
+            max-height: 48px;
+        }
+    }
+
+    &:hover .actions{
+        transform: translateY(0);
+    }
+}

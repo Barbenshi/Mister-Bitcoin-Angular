@@ -1,0 +1,24 @@
+<section routerLink="/contact" class="contact-details modal-wrapper">
+    <div (click)="$event.stopPropagation()" class="modal-content">
+
+    <div className="img-container">
+        <img [src]="imgUrl" alt="" />
+        <!-- <Link title='Edit contact' to={`/contact/edit/${contact._id}`} className="simple-button medium-button">📝</Link> -->
+    </div>
+    <section>
+        <h3>Name: {{contact.name}}</h3>
+    </section>
+    <section>
+        <h3>Phone number: {{contact.phone}}</h3>
+    </section>
+    <section>
+        <address>Email address: {{contact.email}}</address>
+    </section>
+    <!-- <TransferFund onTransferCoins={onTransferCoins} name={contact.name} />
+    {moves() && <MovesList moves={moves()} />} -->
+    <button class="simple-button dismiss left" (click)="onBack()">
+        <img src="../../../assets/icons/back.png" alt="">
+    </button>
+</div>
+
+</section>
