@@ -1,0 +1,27 @@
+.contact-edit{
+    .modal-content{
+        border-radius: 0.3em;
+        padding: 20px;
+        h2{
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction:column;
+            gap: 5px;
+            >section{
+                display: flex;
+                justify-content: space-between;
+                gap: 4px;
+            }
+        }
+
+        button{
+            &:hover{
+                color: rgb(24, 125, 24);
+            }
+        }
+
+    }
+}

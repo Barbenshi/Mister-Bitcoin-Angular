@@ -19,6 +19,8 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { MovesListComponent } from './cmps/moves-list/moves-list.component';
 import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { InputColorDirective } from './directives/input-color.directive';
+import { EditableDirective } from './directives/editable.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.compon
     AppHeaderComponent,
     SignUpComponent,
     MovesListComponent,
-    TransferFundComponent
+    TransferFundComponent,
+    InputColorDirective,
+    EditableDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 <section class="home-page flex column align-center justify-center">
-  <div class="user-container" *ngIf="user">
-    <h1>Hello {{ user.name }}!</h1>
-    <div className="content-container flex column justify-center">
+  <div class="user-container flex column align-center" *ngIf="user">
+    <h1>Welcome {{ user.name }}!</h1>
+    <div class="content-container flex column justify-center">
       <img [src]="imgUrl" alt="" />
-      <div className="details-container">
+      <div class="details-container">
         <span>Coins: {{ user.coins }}</span>
-        <div className="btc">
+        <div class="btc">
           <span>BTC: {{ btc }}</span>
           <img src="assets/icons/coins.png" alt="" />
         </div>

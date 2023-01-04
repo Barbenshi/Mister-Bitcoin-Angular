@@ -2,7 +2,7 @@
     .modal-content{
         border-radius: 0.5em;
         overflow: hidden;
-        >*:not(:first-of-type){
+        >section{
             padding-inline: 5px;
         }
         .name{

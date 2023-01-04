@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { ActivatedRoute , Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom, Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { User } from 'src/app/models/user.model';
@@ -18,22 +18,22 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     private contactService: ContactService,
     private route: ActivatedRoute,
     private router: Router,
-    private location:Location,
-    private userService:UserService
-    ) { }
+    private location: Location,
+    private userService: UserService
+  ) { }
 
-  contact!: Contact 
+  contact!: Contact
   subscription!: Subscription
-  userSubs!:Subscription
-  user$!:Observable<User|null>
+  userSubs!: Subscription
+  user$!: Observable<User | null>
 
   async ngOnInit(): Promise<void> {
     // New way with resolver
-    this.subscription = this.route.data.subscribe(({contact})=>{
+    this.subscription = this.route.data.subscribe(({ contact }) => {
       this.contact = contact
     })
     this.user$ = this.userService.user$
-    
+
     // Old way...
     // let contactId = ''
     // this.subscription = this.route.params.subscribe(params => contactId = params['id'])
@@ -52,15 +52,21 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     return `https://robohash.org/set_set5/${this.contact?._id}`
   }
 
-  getMoves(user:User){
-    return user.moves.filter(move=>move.toId === this.contact._id).sort((a,b)=>b.at-a.at)
+  getMoves(user: User) {
+    return user.moves.filter(move => move.toId === this.contact._id).sort((a, b) => b.at - a.at)
   }
 
-  onTransferCoins(amount:number|string){
-    this.userService.addMove({...this.contact},amount as number)
+  onTransferCoins(amount: number | string) {
+    this.userService.addMove({ ...this.contact }, amount as number)
+  }
+
+  onSaveData(data: string, type: string) {
+    const contact = { ...this.contact, [type]: data }
+    this.contactService.saveContact(contact)
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
   }
+
 }

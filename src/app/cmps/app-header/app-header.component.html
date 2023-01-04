@@ -25,7 +25,9 @@
         /></a>
       </li>
       <li *ngIf="user">
-        <button (click)="onLogOut()">Log-Out</button>
+        <button class="simple-button" (click)="onLogOut()">
+          <img src="assets/icons/logout.png" alt="">
+        </button>
       </li>
     </ul>
   </nav>
