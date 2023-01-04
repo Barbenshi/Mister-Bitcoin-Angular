@@ -1,32 +1,17 @@
-<section class="home-page flex column align-center
-justify-center">
-    <div class="user-container" *ngIf="user; else signUp">
-
-        <h1>Hello {{user.name}}!</h1>
-        <div className="content-container flex column justify-center">
-
-            <img [src]="imgUrl" alt="" />
-        <div className="details-container">
-
-            <span>Coins: {{user.coins}}</span>
+<section class="home-page flex column align-center justify-center">
+  <div class="user-container" *ngIf="user">
+    <h1>Hello {{ user.name }}!</h1>
+    <div className="content-container flex column justify-center">
+      <img [src]="imgUrl" alt="" />
+      <div className="details-container">
+        <span>Coins: {{ user.coins }}</span>
         <div className="btc">
-            <span>BTC: {{btc}}</span> <img src="assets/icons/coins.png" alt="" />
+          <span>BTC: {{ btc }}</span>
+          <img src="assets/icons/coins.png" alt="" />
         </div>
+      </div>
+      <!-- <MovesList moves={moves()} title={true} /> -->
+      <moves-list title='yes' [moves]="user.moves|slice:-3" ></moves-list>
     </div>
-    <!-- <MovesList moves={moves()} title={true} /> -->
-</div>
-</div>
-<ng-template #signUp>
-    <section class='sign-up'>
-        <h1>SignUp</h1>
-        <div class="img-container">
-            <img src="assets/icons/contact.png" alt="" />
-        </div>
-        <form (ngSubmit)="onSubmit()" >
-            <label htmlFor="name">Name:</label>
-            <input [(ngModel)]="name" type="text" placeholder='Enter your name here...' id='name' name='name' />
-            <button>Save</button>
-        </form>
-    </section>
-</ng-template>
+  </div>
 </section>

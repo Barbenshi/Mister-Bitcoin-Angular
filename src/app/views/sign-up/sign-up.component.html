@@ -1,0 +1,11 @@
+<section class='sign-up'>
+    <h1>SignUp</h1>
+    <div class="img-container">
+        <img src="assets/icons/contact.png" alt="" />
+    </div>
+    <form (ngSubmit)="onSubmit()" >
+        <label htmlFor="name">Name:</label>
+        <input [(ngModel)]="name" type="text" placeholder='Enter your name here...' id='name' name='name' />
+        <button>Save</button>
+    </form>
+</section>

@@ -1,0 +1,13 @@
+.moves-list {
+  background-color: #a5cde6a1;
+  padding: 5px;
+  max-height: 34vh;
+  ul {
+    margin-bottom: 0;
+    >li{
+        border-top: 1px solid white;
+        padding-block: 5px;
+    }
+  }
+  overflow-y: scroll;
+}

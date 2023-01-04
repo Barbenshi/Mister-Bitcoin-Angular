@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import { Contact } from '../models/contact.model';
+import { Move } from '../models/move.model';
 import { User } from '../models/user.model';
 import { StorageService } from './storage.service';
 
@@ -41,7 +42,14 @@ export class UserService {
   }
 
   addMove(contact: Contact, amount: number) {
-    // this.loggedInUser.moves.push({ toId: contact._id, to: contact.name, at: Date.now(), amount })
+    if(!contact._id) return
+    const move:Move = { toId: contact._id, to: contact.name, at: Date.now(), amount }
+    const currUser = this._user$.value as User
+    if(!currUser.coins || currUser.coins < amount) return
+    currUser.coins -= amount
+    currUser.moves.push(move)
+    this._user$.next({...currUser})
+    // this.loggedInUser.moves.push(move)
     // this.loggedInUser.coins -= amount
     // this.storageService.store('loggedinUser', this.loggedInUser)
     // return this.loggedInUser

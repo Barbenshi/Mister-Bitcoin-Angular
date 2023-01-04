@@ -16,6 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { SignUpComponent } from './views/sign-up/sign-up.component';
+import { MovesListComponent } from './cmps/moves-list/moves-list.component';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
     ContactPreviewComponent,
     ContactFilterComponent,
     ChartComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    SignUpComponent,
+    MovesListComponent,
+    TransferFundComponent
   ],
   imports: [
     BrowserModule,

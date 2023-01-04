@@ -14,7 +14,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   user!: User | null
   btc = 0
-  name = ''
 
   subscription!:Subscription
 
@@ -27,12 +26,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   get imgUrl() {
     return `https://robohash.org/set_set5/${this.user?.name}`
-  }
-
-  onSubmit(){
-    this.userService.signup(this.name)
-    // this.user = user
-    this.name = ''
   }
 
   ngOnDestroy(): void {

@@ -5,20 +5,24 @@
         <img [src]="imgUrl" alt="" />
         <!-- <Link title='Edit contact' to={`/contact/edit/${contact._id}`} className="simple-button medium-button">📝</Link> -->
     </div>
-    <section>
+    <section class="name">
         <h3>Name: {{contact.name}}</h3>
     </section>
-    <section>
+    <section class="phone">
         <h3>Phone number: {{contact.phone}}</h3>
     </section>
-    <section>
+    <section class="email">
         <address>Email address: {{contact.email}}</address>
     </section>
     <!-- <TransferFund onTransferCoins={onTransferCoins} name={contact.name} />
     {moves() && <MovesList moves={moves()} />} -->
+    <transfer-fund (transferCoins)="onTransferCoins($event)" [contact]="contact"></transfer-fund>
     <button class="simple-button dismiss left" (click)="onBack()">
         <img src="assets/icons/back.png" alt="">
     </button>
+    <ng-container *ngIf="user$|async as user">
+        <moves-list [moves]="getMoves(user)" [name]="contact.name"></moves-list>
+    </ng-container>
 </div>
 
 </section>

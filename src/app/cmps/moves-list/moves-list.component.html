@@ -1,0 +1,10 @@
+<div class="moves-list" *ngIf="moves.length">
+    <h3>{{getTitle}}</h3>
+    <ul>
+            <li class="flex column" *ngFor="let move of moves">
+                <h4 *ngIf="title"> To:{{move.to}}</h4>
+                <span>At: {{move.at|date:'dd/MM/yy, h:mm a'}}</span>
+                <span>Amount: {{move.amount}} Coins</span>
+            </li>
+    </ul>
+</div>

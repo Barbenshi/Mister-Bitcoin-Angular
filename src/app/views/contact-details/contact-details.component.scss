@@ -1,0 +1,23 @@
+.contact-details{
+    .modal-content{
+        border-radius: 0.5em;
+        overflow: hidden;
+        >*:not(:first-of-type){
+            padding-inline: 5px;
+        }
+        .name{
+            background-color: #ffcbb8;
+        }
+        .phone{
+            background-color: cornsilk;
+        }
+        .email{
+            background-color: #bdb3fc;
+        }
+        img{
+            width: 100%;
+
+        }
+    }
+
+}
